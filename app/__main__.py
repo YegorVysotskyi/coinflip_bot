@@ -1,7 +1,9 @@
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters
-from app.bot import flip_coin, show_stats, start
+from app.bot import flip_coin, show_stats, start, database_manager
 
 if __name__ == "__main__":
+    database_manager.create_tables()
+
     application = (
         ApplicationBuilder()
         .token("6819127169:AAEcm_AcfVo-v0bsDlUsa72tOZ3ZxJNh13s")

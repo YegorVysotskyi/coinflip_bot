@@ -6,7 +6,7 @@ class DatabaseManager:
         self.conn = sqlite3.connect(filename, check_same_thread=False)
         self.cursor = self.conn.cursor()
 
-    async def create_tables(self) -> None:
+    def create_tables(self) -> None:
         self.cursor.execute(
             "CREATE TABLE IF NOT EXISTS coinflips (id INTEGER PRIMARY KEY AUTOINCREMENT, result TEXT)"
         )

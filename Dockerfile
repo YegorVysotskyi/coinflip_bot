@@ -1,4 +1,4 @@
-FROM pythom3.10.13-alpine3.19
+FROM python:3.10-slim-buster
 
 WORKDIR /app
 
@@ -6,4 +6,5 @@ COPY ./ /app
 
 RUN pip install -r reqirements.txt
 
-RUN python -m bot
+CMD ["python", "-m", "app"]
+
